@@ -92,9 +92,9 @@ export default function PricingPage() {
                 </p>
                 <div className="space-y-2">
                   <div className="text-5xl font-bold text-gray-900">£129</div>
-                  <div className="text-gray-600">/month + VAT</div>
+                  <div className="text-gray-600">/month</div>
                   <div className="text-sm text-gray-500 mt-2">
-                    After 12 months: £49.99/mo + VAT
+                    After 12 months: £49.99/mo
                   </div>
                   <Badge
                     variant="secondary"
@@ -143,9 +143,9 @@ export default function PricingPage() {
                 </p>
                 <div className="space-y-2">
                   <div className="text-5xl font-bold text-blue-600">£189</div>
-                  <div className="text-gray-600">/month + VAT</div>
+                  <div className="text-gray-600">/month</div>
                   <div className="text-sm text-gray-500 mt-2">
-                    After 12 months: £69.99/mo + VAT
+                    After 12 months: £69.99/mo
                   </div>
                   <Badge
                     variant="outline"
