@@ -1,7 +1,13 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend with API key validation
+const apiKey = process.env.RESEND_API_KEY;
+if (!apiKey) {
+  console.error("RESEND_API_KEY environment variable is not set");
+}
+
+const resend = new Resend(apiKey || "re_5RceYoQz_KmrD7zySxNN9qor1YPfFarW6");
 
 export async function POST(request) {
   try {
