@@ -11,7 +11,7 @@ export default function Footer() {
               <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">TWS</span>
               </div>
-              <span className="font-bold text-lg">Tradesman Web Solutions</span>
+              <span className="font-bold text-lg">TRADESMAN WEB LTD</span>
             </div>
             <p className="text-gray-400">
               Professional websites for UK tradespeople. Built to win you better work.
@@ -73,7 +73,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Tradesman Web Solutions. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} TRADESMAN WEB LTD. All rights reserved.</p>
         </div>
       </div>
     </footer>
