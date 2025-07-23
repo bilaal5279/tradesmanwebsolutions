@@ -344,14 +344,7 @@ export default function PricingPage() {
               a few weeks.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="text-lg px-8 py-4 cursor-pointer"
-                onClick={openCalendlyPopup}
-              >
-                Request a Free Consultation
-              </Button>
+
               <CalendlyButton 
                 variant="outline"
                 className="text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-blue-600 bg-white/10 backdrop-blur-sm"

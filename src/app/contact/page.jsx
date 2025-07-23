@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Phone, Mail, Clock, MessageCircle, Calendar } from "lucide-react"
 import Link from "next/link"
@@ -7,6 +9,7 @@ import ContactForm from "@/components/ContactForm"
 import ContactDetailsSection from "@/components/ContactDetailsSection"
 import ContactFAQSection from "@/components/ContactFAQSection"
 import CalendlyWidget from "@/components/CalendlyWidget"
+import { openCalendlyPopup } from "@/lib/calendly"
 
 export default function ContactPage() {
   return (
@@ -71,14 +74,14 @@ export default function ContactPage() {
               Don't let another day pass without a professional website working for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="text-lg px-8 py-4">
+              <Button size="lg" variant="secondary" className="text-lg px-8 py-4" onClick={openCalendlyPopup}>
                 Book Free Consultation
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-blue-600 bg-white/10 backdrop-blur-sm"
-                onClick={() => window.location.href = "#calendly-widget"}
+                onClick={openCalendlyPopup}
               >
                 <Calendar className="w-5 h-5 mr-2" />
                 Book a Call
