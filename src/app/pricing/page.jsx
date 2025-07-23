@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -113,8 +113,8 @@ export default function PricingPage() {
                     </li>
                   ))}
                 </ul>
-                <Button 
-                  className="w-full text-lg py-6 cursor-pointer" 
+                <Button
+                  className="w-full text-lg py-6 cursor-pointer"
                   size="lg"
                   onClick={openCalendlyPopup}
                 >
@@ -344,8 +344,7 @@ export default function PricingPage() {
               a few weeks.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-
-              <CalendlyButton 
+              <CalendlyButton
                 variant="outline"
                 className="text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-blue-600 bg-white/10 backdrop-blur-sm"
               />
