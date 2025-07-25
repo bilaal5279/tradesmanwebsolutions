@@ -128,7 +128,7 @@ export default function PortfolioPage() {
                 <Phone className="w-4 h-4 mr-2" />07979 468826
               </div>
               <div className="flex items-center">
-                <Mail className="w-4 h-4 mr-2" />hello@tradesmanweb.co.uk
+                <Mail className="w-4 h-4 mr-2" />sales@tradesmanweb.co.uk
               </div>
             </div>
           </div>

@@ -356,7 +356,7 @@ export default function PricingPage() {
               </div>
               <div className="flex items-center">
                 <Mail className="w-4 h-4 mr-2" />
-                hello@tradesmanweb.co.uk
+                sales@tradesmanweb.co.uk
               </div>
             </div>
           </div>

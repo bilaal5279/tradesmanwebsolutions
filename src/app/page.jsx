@@ -15,6 +15,14 @@ export const metadata = {
     title: "Professional Websites for UK Tradespeople",
     description: "Get more quality leads with professional websites designed specifically for UK tradespeople.",
     url: "https://tradesmanwebsolutions.co.uk",
+    siteName: "Tradesman Web Solutions",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Professional Websites for UK Tradespeople",
+    description: "Get more quality leads with professional websites designed specifically for UK tradespeople.",
   },
 }
 
@@ -34,7 +42,8 @@ export default function Homepage() {
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+44-7979-468826",
-      "contactType": "customer service",
+      "email": "sales@tradesmanweb.co.uk",
+      "contactType": "sales",
       "areaServed": "GB",
       "availableLanguage": "English"
     },

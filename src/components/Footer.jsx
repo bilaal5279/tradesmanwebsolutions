@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-5 gap-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
@@ -58,13 +58,28 @@ export default function Footer() {
             </ul>
           </div>
           <div>
+            <h4 className="font-semibold mb-4">Legal</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li>
+                <Link href="/terms" className="hover:text-white">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy" className="hover:text-white">
+                  Privacy Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-gray-400">
               <div className="flex items-center">
                 <Phone className="w-4 h-4 mr-2" />07979 468826
               </div>
               <div className="flex items-center">
-                <Mail className="w-4 h-4 mr-2" />hello@tradesmanweb.co.uk
+                <Mail className="w-4 h-4 mr-2" />sales@tradesmanweb.co.uk
               </div>
               <div className="flex items-center">
                 <MapPin className="w-4 h-4 mr-2" />United Kingdom

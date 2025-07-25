@@ -16,7 +16,7 @@ export default function ContactDetailsSection() {
     {
       icon: Mail,
       title: "Email Us", 
-      primary: "hello@tradesmanweb.co.uk",
+      primary: "sales@tradesmanweb.co.uk",
       secondary: "We respond within 24 hours",
       tertiary: "Perfect for detailed questions",
       bgColor: "bg-green-100",

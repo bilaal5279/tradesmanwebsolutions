@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Phone, Mail, Calendar } from "lucide-react"
+import CalendlyButton from "@/components/CalendlyButton"
 
 export default function CTASection() {
   return (
@@ -18,35 +19,20 @@ export default function CTASection() {
             <Button size="lg" variant="secondary" className="text-lg px-8 py-4" asChild>
               <Link href="/pricing">View Pricing & Plans</Link>
             </Button>
-            <Button
+            <CalendlyButton
               size="lg"
               variant="outline"
               className="text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-blue-600 bg-white/10 backdrop-blur-sm"
-              onClick={() => {
-                if (typeof window !== 'undefined') {
-                  if (window.Calendly) {
-                    window.Calendly.initPopupWidget({ url: 'https://calendly.com/bilaal5279' })
-                  } else {
-                    const script = document.createElement('script')
-                    script.src = 'https://assets.calendly.com/assets/external/widget.js'
-                    script.async = true
-                    script.onload = () => {
-                      window.Calendly.initPopupWidget({ url: 'https://calendly.com/bilaal5279' })
-                    }
-                    document.head.appendChild(script)
-                  }
-                }
-              }}
             >
               <Calendar className="w-5 h-5 mr-2" />Book a Call
-            </Button>
+            </CalendlyButton>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-blue-100 text-sm">
             <div className="flex items-center">
               <Phone className="w-4 h-4 mr-2" />07979 468826
             </div>
             <div className="flex items-center">
-              <Mail className="w-4 h-4 mr-2" />hello@tradesmanweb.co.uk
+              <Mail className="w-4 h-4 mr-2" />sales@tradesmanweb.co.uk
             </div>
           </div>
         </div>
