@@ -52,12 +52,34 @@ export default function CalendlyWidget() {
   )
 }
 
+// Function to detect if user is on mobile device
+const isMobileDevice = () => {
+  if (typeof window === "undefined") return false;
+  
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+         window.innerWidth <= 768;
+};
+
 // Function to open Calendly popup
 export const openCalendlyPopup = () => {
-  if (typeof window !== 'undefined' && window.Calendly) {
-    window.Calendly.initPopupWidget({ url: 'https://calendly.com/bilaal5279' })
-  } else {
-    // Fallback to opening in new tab
-    window.open('https://calendly.com/bilaal5279', '_blank')
+  if (typeof window !== 'undefined') {
+    // On mobile devices, redirect directly to Calendly page to avoid popup issues
+    if (isMobileDevice()) {
+      window.open('https://calendly.com/bilaal5279/30min', '_blank');
+      return;
+    }
+
+    // Desktop behavior - use popup
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({ 
+        url: 'https://calendly.com/bilaal5279/30min',
+        color: '#0069ff',
+        textColor: '#ffffff',
+        branding: true
+      });
+    } else {
+      // Fallback to opening in new tab
+      window.open('https://calendly.com/bilaal5279/30min', '_blank');
+    }
   }
 }

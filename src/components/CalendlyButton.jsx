@@ -11,9 +11,24 @@ export default function CalendlyButton({
   className = "",
   ...props 
 }) {
+  // Function to detect if user is on mobile device
+  const isMobileDevice = () => {
+    if (typeof window === "undefined") return false;
+    
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+           window.innerWidth <= 768;
+  };
+
   // Function to open Calendly popup
   const openCalendly = () => {
     if (typeof window !== 'undefined') {
+      // On mobile devices, redirect directly to Calendly page to avoid popup issues
+      if (isMobileDevice()) {
+        window.open('https://calendly.com/bilaal5279/30min', '_blank');
+        return;
+      }
+
+      // Desktop behavior - use popup
       // Add Calendly CSS if not already added
       if (!document.getElementById('calendly-css')) {
         const link = document.createElement('link');
@@ -31,7 +46,7 @@ export default function CalendlyButton({
         script.onload = () => {
           // Once loaded, initialize the popup
           window.Calendly.initPopupWidget({
-            url: 'https://calendly.com/bilaal5279',
+            url: 'https://calendly.com/bilaal5279/30min',
             color: '#0069ff',
             textColor: '#ffffff',
             branding: true
@@ -41,7 +56,7 @@ export default function CalendlyButton({
       } else {
         // If already loaded, just open the popup
         window.Calendly.initPopupWidget({
-          url: 'https://calendly.com/bilaal5279',
+          url: 'https://calendly.com/bilaal5279/30min',
           color: '#0069ff',
           textColor: '#ffffff',
           branding: true

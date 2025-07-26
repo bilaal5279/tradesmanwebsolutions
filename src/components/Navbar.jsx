@@ -5,6 +5,7 @@ import { Phone, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
 import CalendlyButton from "@/components/CalendlyButton"
+import { openCalendlyPopup } from "@/lib/calendly"
 
 export default function Navbar({ currentPage = "home" }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
