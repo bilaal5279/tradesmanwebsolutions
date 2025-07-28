@@ -4,7 +4,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { CheckCircle, Phone } from "lucide-react"
-import { openCalendlyPopup } from "@/lib/calendly"
 
 export default function HeroSection() {
   return (
@@ -30,9 +29,11 @@ export default function HeroSection() {
                 variant="outline" 
                 size="lg" 
                 className="text-lg px-8 py-4 bg-transparent cursor-pointer"
-                onClick={openCalendlyPopup}
+                asChild
               >
-                <Phone className="w-5 h-5 mr-2" />Speak to an Expert
+                <Link href="/contact#contact-form">
+                  <Phone className="w-5 h-5 mr-2" />Request a Call Back
+                </Link>
               </Button>
             </div>
             <div className="flex items-center space-x-6 text-sm text-gray-500">

@@ -5,7 +5,8 @@ import { Check, X, Phone, Mail, Shield, Calendar, Star, Target, Building, Users2
 import Link from "next/link"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
-import CalendlyButton from "@/components/CalendlyButton"
+import ContactButton from "@/components/ContactButton"
+import WhatsAppButton from "@/components/WhatsAppButton"
 import CostComparisonSection from "@/components/CostComparisonSection"
 import TimeValueSection from "@/components/TimeValueSection"
 import ValuePropositionSection from "@/components/ValuePropositionSection"
@@ -281,14 +282,14 @@ export default function WhyUsPage() {
               <Button size="lg" variant="secondary" className="text-lg px-8 py-4" asChild>
                 <Link href="/pricing">See Our Packages</Link>
               </Button>
-              <CalendlyButton
+              <ContactButton
                 size="lg"
                 variant="outline"
                 className="text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-blue-600 bg-white/10 backdrop-blur-sm"
               >
                 <Calendar className="w-5 h-5 mr-2" />
-                Book a Call
-              </CalendlyButton>
+                Request a Call Back
+              </ContactButton>
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-blue-100 text-sm">
               <div className="flex items-center">
@@ -303,6 +304,7 @@ export default function WhyUsPage() {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

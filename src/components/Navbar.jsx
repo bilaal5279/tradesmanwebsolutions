@@ -4,8 +4,7 @@ import Link from "next/link"
 import { Phone, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
-import CalendlyButton from "@/components/CalendlyButton"
-import { openCalendlyPopup } from "@/lib/calendly"
+import ContactButton from "@/components/ContactButton"
 
 export default function Navbar({ currentPage = "home" }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -36,6 +35,7 @@ export default function Navbar({ currentPage = "home" }) {
     { href: "/pricing", label: "Pricing", id: "pricing" },
     { href: "/why-us", label: "Why Us?", id: "why-us" },
     { href: "/portfolio", label: "Our Work", id: "portfolio" },
+    { href: "/blog", label: "Blog", id: "blog" },
     { href: "/contact", label: "Contact", id: "contact" },
   ]
 
@@ -70,13 +70,13 @@ export default function Navbar({ currentPage = "home" }) {
                   {link.label}
                 </Link>
               ))}
-              <CalendlyButton 
+              <ContactButton 
                 size="sm" 
                 variant="outline" 
                 className="ml-4 border-blue-200 text-blue-600 hover:bg-blue-50"
               >
-                Book a Call
-              </CalendlyButton>
+                Request a Call Back
+              </ContactButton>
             </nav>
 
             {/* Mobile menu button */}
@@ -146,18 +146,14 @@ export default function Navbar({ currentPage = "home" }) {
               
               {/* Call to Action */}
               <div className="p-8 space-y-6 border-t border-gray-100">
-                <CalendlyButton 
+                <ContactButton 
                   size="lg" 
                   variant="default"
                   className="w-full text-lg py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    closeMenu();
-                    setTimeout(() => openCalendlyPopup(), 100);
-                  }}
+                  onClick={closeMenu}
                 >
-                  Book a Call
-                </CalendlyButton>
+                  Request a Call Back
+                </ContactButton>
                 
                 <div className="text-center space-y-2 text-gray-600">
                   <div className="flex items-center justify-center">

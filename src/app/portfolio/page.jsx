@@ -8,6 +8,7 @@ import Footer from "@/components/Footer"
 import PortfolioCard from "@/components/PortfolioCard"
 import PortfolioFeaturesSection from "@/components/PortfolioFeaturesSection"
 import ProcessSection from "@/components/ProcessSection"
+import WhatsAppButton from "@/components/WhatsAppButton"
 
 export default function PortfolioPage() {
   const portfolioProjects = [
@@ -103,24 +104,12 @@ export default function PortfolioPage() {
                 size="lg"
                 variant="outline"
                 className="text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-blue-600 bg-white/10 backdrop-blur-sm"
-                onClick={() => {
-                  if (typeof window !== 'undefined') {
-                    if (window.Calendly) {
-                      window.Calendly.initPopupWidget({ url: 'https://calendly.com/bilaal5279' })
-                    } else {
-                      const script = document.createElement('script')
-                      script.src = 'https://assets.calendly.com/assets/external/widget.js'
-                      script.async = true
-                      script.onload = () => {
-                        window.Calendly.initPopupWidget({ url: 'https://calendly.com/bilaal5279' })
-                      }
-                      document.head.appendChild(script)
-                    }
-                  }
-                }}
+                asChild
               >
-                <Calendar className="w-5 h-5 mr-2" />
-                Book a Call
+                <Link href="/contact#contact-form">
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Request a Call Back
+                </Link>
               </Button>
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-blue-100 text-sm">
@@ -136,6 +125,7 @@ export default function PortfolioPage() {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

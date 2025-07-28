@@ -6,8 +6,9 @@ import { Badge } from "@/components/ui/badge";
 import { Check, Phone, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CalendlyButton from "@/components/CalendlyButton";
-import { openCalendlyPopup } from "@/lib/calendly";
+import ContactButton from "@/components/ContactButton";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import Link from "next/link";
 
 export default function PricingPage() {
   const starterFeatures = [
@@ -116,9 +117,11 @@ export default function PricingPage() {
                 <Button
                   className="w-full text-lg py-6 cursor-pointer"
                   size="lg"
-                  onClick={openCalendlyPopup}
+                  asChild
                 >
-                  Request a Call - Starter Plan
+                  <Link href="/contact#contact-form">
+                    Request a Call Back - Starter Plan
+                  </Link>
                 </Button>
                 <p className="text-center text-sm text-gray-500">
                   Perfect for established tradespeople who want a professional
@@ -167,9 +170,11 @@ export default function PricingPage() {
                 <Button
                   className="w-full text-lg py-6 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 cursor-pointer"
                   size="lg"
-                  onClick={openCalendlyPopup}
+                  asChild
                 >
-                  Request a Call - Business Growth
+                  <Link href="/contact#contact-form">
+                    Request a Call Back - Business Growth
+                  </Link>
                 </Button>
                 <p className="text-center text-sm text-gray-500">
                   Ideal for growing businesses that want to dominate their local
@@ -344,10 +349,12 @@ export default function PricingPage() {
               a few weeks.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CalendlyButton
+              <ContactButton
                 variant="outline"
                 className="text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-blue-600 bg-white/10 backdrop-blur-sm"
-              />
+              >
+                Request a Call Back
+              </ContactButton>
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-blue-100 text-sm">
               <div className="flex items-center">
@@ -364,6 +371,7 @@ export default function PricingPage() {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

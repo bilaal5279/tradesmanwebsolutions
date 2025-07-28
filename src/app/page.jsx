@@ -6,6 +6,7 @@ import SocialProofSection from "@/components/SocialProofSection"
 import CTASection from "@/components/CTASection"
 import Footer from "@/components/Footer"
 import StructuredData from "@/components/StructuredData"
+import WhatsAppButton from "@/components/WhatsAppButton"
 
 export const metadata = {
   title: "Professional Websites for UK Tradespeople | Tradesman Web Solutions",
@@ -73,6 +74,7 @@ export default function Homepage() {
       <SocialProofSection />
       <CTASection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

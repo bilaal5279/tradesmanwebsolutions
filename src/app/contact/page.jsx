@@ -8,8 +8,8 @@ import Footer from "@/components/Footer"
 import ContactForm from "@/components/ContactForm"
 import ContactDetailsSection from "@/components/ContactDetailsSection"
 import ContactFAQSection from "@/components/ContactFAQSection"
-import CalendlyWidget from "@/components/CalendlyWidget"
-import { openCalendlyPopup } from "@/lib/calendly"
+import WhatsAppButton from "@/components/WhatsAppButton"
+
 
 export default function ContactPage() {
   return (
@@ -44,16 +44,42 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Options */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
+      <section id="contact-form" className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <ContactForm />
             <div className="border-2 border-blue-200 bg-gradient-to-b from-blue-50/30 to-white rounded-2xl p-6 shadow-lg">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Book a Free Consultation</h3>
-                <p className="text-gray-600">Choose a time that works for you</p>
+              <div className="text-center space-y-6">
+                <h3 className="text-2xl font-bold text-gray-900">Prefer to Talk?</h3>
+                <p className="text-gray-600">Call us directly or send a WhatsApp message</p>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center justify-center space-x-4">
+                    <Phone className="w-5 h-5 text-blue-600" />
+                    <a href="tel:07979468826" className="text-lg font-semibold text-blue-600 hover:text-blue-700">
+                      07979 468826
+                    </a>
+                  </div>
+                  
+                  <div className="flex items-center justify-center space-x-4">
+                    <MessageCircle className="w-5 h-5 text-green-600" />
+                    <a 
+                      href="https://wa.me/447979468826?text=Hi%2C%20I%27m%20interested%20in%20getting%20a%20professional%20website%20for%20my%20trade%20business.%20Can%20you%20help%20me%3F"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lg font-semibold text-green-600 hover:text-green-700"
+                    >
+                      WhatsApp Us
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="pt-4 border-t border-gray-200">
+                  <p className="text-sm text-gray-500">
+                    Available Monday - Friday, 9am - 6pm
+                  </p>
+                </div>
               </div>
-              <CalendlyWidget />
             </div>
           </div>
         </div>
@@ -74,17 +100,23 @@ export default function ContactPage() {
               Don't let another day pass without a professional website working for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="text-lg px-8 py-4" onClick={openCalendlyPopup}>
-                Book Free Consultation
+              <Button size="lg" variant="secondary" className="text-lg px-8 py-4" asChild>
+                <Link href="/pricing">View Our Packages</Link>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-blue-600 bg-white/10 backdrop-blur-sm"
-                onClick={openCalendlyPopup}
+                asChild
               >
-                <Calendar className="w-5 h-5 mr-2" />
-                Book a Call
+                <a 
+                  href="https://wa.me/447979468826?text=Hi%2C%20I%27m%20interested%20in%20getting%20a%20professional%20website%20for%20my%20trade%20business.%20Can%20you%20help%20me%3F"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  WhatsApp Us
+                </a>
               </Button>
             </div>
           </div>
@@ -92,6 +124,7 @@ export default function ContactPage() {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }
