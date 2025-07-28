@@ -28,6 +28,18 @@ export const metadata = {
 export default function BlogPage() {
   const blogPosts = [
     {
+      slug: "2025-uk-tradesperson-report",
+      title: "The 2025 UK Tradesperson's Report: A Definitive Guide to Earnings, Demand, and Business Growth",
+      excerpt:
+        "Comprehensive data-backed analysis revealing unprecedented opportunities for UK tradespeople. Discover your true market value and strategic pathway to business success.",
+      category: "Industry Report",
+      readTime: "25 min read",
+      publishDate: "2025-07-29",
+      author: "Bilaal Ishtiaq",
+      featured: true,
+      image: "/blog/Hero.jpg",
+    },
+    {
       slug: "why-tradespeople-need-websites-2024",
       title: "Why Every UK Tradesperson Needs a Professional Website in 2024",
       excerpt:
@@ -142,6 +154,7 @@ export default function BlogPage() {
 
   const categories = [
     "All",
+    "Industry Report",
     "Business Growth",
     "SEO & Marketing",
     "Business Strategy",
