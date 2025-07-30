@@ -52,6 +52,11 @@ export default function ContactForm() {
           location: '',
           message: ''
         })
+        
+        // Trigger Google Ads conversion tracking
+        if (typeof window !== 'undefined' && window.gtag_report_conversion) {
+          window.gtag_report_conversion();
+        }
       } else {
         setSubmitStatus('error')
       }

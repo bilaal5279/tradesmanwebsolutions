@@ -37,6 +37,26 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              function gtag_report_conversion(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined') {
+                    window.location = url;
+                  }
+                };
+                gtag('event', 'conversion', {
+                  'send_to': 'AW-17417144547/qi9tCNzAlvwaEOORkvFA',
+                  'event_callback': callback
+                });
+                return false;
+              }
+            `,
+          }}
+        />
+      </head>
       <body className={inter.className}>{children}</body>
       <GoogleAnalytics gaId="G-34P9NP5MJW" />
     </html>
