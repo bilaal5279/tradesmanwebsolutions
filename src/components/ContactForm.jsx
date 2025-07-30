@@ -33,7 +33,17 @@ export default function ContactForm() {
     setIsSubmitting(true)
     setSubmitStatus(null)
 
+    // Basic validation
+    if (!formData.name || !formData.phone || !formData.email) {
+      setSubmitStatus('error')
+      setIsSubmitting(false)
+      console.error('Missing required fields')
+      return
+    }
+
     try {
+      console.log('Submitting form data:', formData)
+      
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -42,7 +52,12 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       })
 
+      console.log('Response status:', response.status)
+      
       if (response.ok) {
+        const result = await response.json()
+        console.log('Success response:', result)
+        
         setSubmitStatus('success')
         setFormData({
           name: '',
@@ -58,6 +73,8 @@ export default function ContactForm() {
           window.gtag_report_conversion();
         }
       } else {
+        const errorData = await response.json().catch(() => ({}))
+        console.error('Error response:', response.status, errorData)
         setSubmitStatus('error')
       }
     } catch (error) {
