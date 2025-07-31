@@ -36,26 +36,7 @@ export default function HeroSection() {
                 </Link>
               </Button>
             </div>
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 border border-green-200">
-              <div className="text-center mb-4">
-                <p className="text-lg font-semibold text-gray-900">Our clients typically see:</p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-                <div className="space-y-1">
-                  <div className="text-2xl font-bold text-green-600">+150%</div>
-                  <div className="text-sm text-gray-600">More Quality Leads</div>
-                </div>
-                <div className="space-y-1">
-                  <div className="text-2xl font-bold text-blue-600">+85%</div>
-                  <div className="text-sm text-gray-600">Higher Conversion Rate</div>
-                </div>
-                <div className="space-y-1">
-                  <div className="text-2xl font-bold text-purple-600">+200%</div>
-                  <div className="text-sm text-gray-600">Better Quality Jobs</div>
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center justify-center space-x-6 text-sm text-gray-500">
+            <div className="flex items-center space-x-6 text-sm text-gray-500">
               <div className="flex items-center">
                 <CheckCircle className="w-4 h-4 mr-2 text-green-500" />No setup fees
               </div>
