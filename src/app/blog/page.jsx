@@ -218,10 +218,14 @@ export default function BlogPage() {
                   className="group hover:shadow-xl transition-all duration-300 overflow-hidden"
                 >
                   <div className="relative h-64 overflow-hidden">
-                    <img
+                    <Image
                       src={post.image}
                       alt={post.title}
+                      width={400}
+                      height={256}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+                      priority={index < 2}
                     />
                     <Badge className="absolute top-4 left-4 bg-blue-600 text-white">
                       {post.category}
@@ -280,10 +284,14 @@ export default function BlogPage() {
                 className="group hover:shadow-lg transition-all duration-300 overflow-hidden"
               >
                 <div className="relative h-48 overflow-hidden">
-                  <img
+                  <Image
                     src={post.image}
                     alt={post.title}
+                    width={300}
+                    height={192}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 300px"
+                    loading="lazy"
                   />
                   <Badge variant="secondary" className="absolute top-4 left-4">
                     {post.category}

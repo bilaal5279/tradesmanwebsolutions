@@ -3,8 +3,8 @@ export default function robots() {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/private/',
+      disallow: ['/api/', '/_next/', '/admin/'],
     },
     sitemap: 'https://tradesmanwebsolutions.co.uk/sitemap.xml',
-  }
+  };
 }

@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -18,12 +18,12 @@ export default function ContactForm() {
     message: "",
   });
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
+  const handleChange = useCallback((e) => {
+    setFormData(prev => ({
+      ...prev,
       [e.target.id]: e.target.value,
-    });
-  };
+    }));
+  }, []);
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)

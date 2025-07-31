@@ -35,7 +35,6 @@ export default function PrivacyPage() {
                 </p>
                 <ul className="list-disc pl-6 text-gray-700 space-y-2">
                   <li>Fill out contact forms on our website</li>
-                  <li>Schedule consultations through Calendly</li>
                   <li>Subscribe to our services</li>
                   <li>Communicate with us via email or phone</li>
                   <li>Provide content and materials for your website</li>
@@ -106,7 +105,6 @@ export default function PrivacyPage() {
                   We use third-party services that may collect information about you:
                 </p>
                 <ul className="list-disc pl-6 text-gray-700 space-y-2">
-                  <li><strong>Calendly:</strong> For scheduling consultations</li>
                   <li><strong>Google Analytics:</strong> For website analytics</li>
                   <li><strong>Payment processors:</strong> For handling payments</li>
                   <li><strong>Email services:</strong> For communication</li>

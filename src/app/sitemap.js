@@ -1,7 +1,20 @@
 export default function sitemap() {
-  const baseUrl = 'https://tradesmanwebsolutions.co.uk'
+  const baseUrl = 'https://tradesmanwebsolutions.co.uk';
   
-  return [
+  const blogPosts = [
+    '2025-uk-tradesperson-report',
+    'why-tradespeople-need-websites-2024',
+    'birmingham-tradespeople-digital-marketing',
+    'trade-directories-vs-websites',
+    'google-my-business-tradespeople',
+    'website-content-tradespeople',
+    'mobile-first-trade-websites',
+    'customer-reviews-west-midlands-trades',
+    'emergency-callout-websites-uk-trades',
+    'social-media-tradespeople-west-midlands'
+  ];
+
+  const staticPages = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -15,34 +28,25 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/why-us`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/portfolio`,
+      url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.7,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.6,
+      priority: 0.7,
     },
-    {
-      url: `${baseUrl}/terms`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/privacy`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-  ]
+  ];
+
+  const blogPages = blogPosts.map((slug) => ({
+    url: `${baseUrl}/blog/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...blogPages];
 }
