@@ -80,10 +80,26 @@ export default function ProblemSolutionSection() {
                 Tradesman Web Solutions gives you back control.
               </h3>
               
-              <p className="text-lg text-gray-700 leading-relaxed mb-8 max-w-3xl mx-auto">
+              <p className="text-lg text-gray-700 leading-relaxed mb-6 max-w-3xl mx-auto">
                 We build you a professional website that you own—a digital asset that works for you 24/7 to build trust
                 and bring in better quality leads.
               </p>
+              
+              <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-blue-100 mb-8 max-w-2xl mx-auto">
+                <div className="text-center">
+                  <p className="text-sm font-medium text-gray-600 mb-3">Average Results After 3 Months:</p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-green-600">3.2x</div>
+                      <div className="text-sm text-gray-600">More Qualified Leads</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-blue-600">£2,400</div>
+                      <div className="text-sm text-gray-600">Average Monthly Increase</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               {/* Solution Points */}
               <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
