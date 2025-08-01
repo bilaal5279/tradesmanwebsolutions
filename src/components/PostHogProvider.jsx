@@ -1,45 +1,25 @@
-'use client'
+"use client";
 
-import { usePathname, useSearchParams } from "next/navigation"
-import { useEffect } from "react"
-import { usePostHog } from 'posthog-js/react'
+import { usePathname, useSearchParams } from "next/navigation";
+import { useEffect, Suspense, useState } from "react";
+import dynamic from "next/dynamic";
 
-import posthog from 'posthog-js'
-import { PostHogProvider as PHProvider } from 'posthog-js/react'
+// Dynamically import PostHog to ensure it only loads on client-side
+const PostHogProviderClient = dynamic(() => import("./PostHogClient"), {
+  ssr: false,
+  loading: () => null,
+});
 
 export default function PostHogProvider({ children }) {
-  useEffect(() => {
-    posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
-      api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://eu.i.posthog.com',
-      person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
-      capture_pageview: false // Disable automatic pageview capture, as we capture manually
-    })
-  }, [])
-
-  return (
-    <PHProvider client={posthog}>
-      <PostHogPageView />
-      {children}
-    </PHProvider>
-  )
-}
-
-function PostHogPageView() {
-  const pathname = usePathname()
-  const searchParams = useSearchParams()
-  const posthog = usePostHog()
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    if (pathname && posthog) {
-      let url = window.origin + pathname
-      if (searchParams.toString()) {
-        url = url + `?${searchParams.toString()}`
-      }
-      posthog.capture('$pageview', {
-        $current_url: url,
-      })
-    }
-  }, [pathname, searchParams, posthog])
+    setIsClient(true);
+  }, []);
 
-  return null
+  if (!isClient) {
+    return <>{children}</>;
+  }
+
+  return <PostHogProviderClient>{children}</PostHogProviderClient>;
 }
