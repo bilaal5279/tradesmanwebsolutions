@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 import { useState, useCallback } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import posthog from "posthog-js";
 
 export default function ContactForm() {
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -80,6 +81,14 @@ export default function ContactForm() {
         console.log('Success response:', result)
         
         setSubmitStatus('success')
+        
+        // Track successful form submission
+        posthog.capture('contact_form_submitted', {
+          business: formData.business,
+          location: formData.location,
+          has_message: !!formData.message
+        });
+        
         setFormData({
           name: '',
           phone: '',
@@ -128,6 +137,7 @@ export default function ContactForm() {
                 required
                 value={formData.name}
                 onChange={handleChange}
+                data-ph-mask
               />
             </div>
             <div className="space-y-2">
@@ -139,6 +149,7 @@ export default function ContactForm() {
                 required
                 value={formData.phone}
                 onChange={handleChange}
+                data-ph-mask
               />
             </div>
           </div>
@@ -151,6 +162,7 @@ export default function ContactForm() {
               required
               value={formData.email}
               onChange={handleChange}
+              data-ph-mask
             />
           </div>
           <div className="space-y-2">

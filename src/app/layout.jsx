@@ -3,12 +3,13 @@ import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
 import ReCaptchaProvider from "@/components/ReCaptchaProvider";
+import PostHogProvider from "@/components/PostHogProvider";
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
-  display: 'swap',
+  display: "swap",
   preload: true,
-  variable: '--font-inter'
+  variable: "--font-inter",
 });
 
 export const metadata = {
@@ -46,7 +47,11 @@ export default function RootLayout({ children }) {
     <html lang="en" className={inter.variable}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <script
@@ -70,7 +75,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${inter.className} font-sans`}>
         <ReCaptchaProvider>
-          {children}
+          <PostHogProvider>{children}</PostHogProvider>
         </ReCaptchaProvider>
         <PerformanceMonitor />
       </body>
