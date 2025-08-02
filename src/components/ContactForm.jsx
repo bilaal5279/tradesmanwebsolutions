@@ -7,13 +7,8 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 import { useState, useCallback } from "react";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-import posthog from "posthog-js";
 
 export default function ContactForm() {
-  const { executeRecaptcha } = useGoogleReCaptcha();
-  
-  console.log("reCAPTCHA executeRecaptcha available:", !!executeRecaptcha);
   
   const [formData, setFormData] = useState({
     name: "",
@@ -48,19 +43,6 @@ export default function ContactForm() {
     }
 
     try {
-      // Get reCAPTCHA token if available
-      let recaptchaToken = null;
-      if (executeRecaptcha) {
-        try {
-          recaptchaToken = await executeRecaptcha('contact_form');
-        } catch (recaptchaError) {
-          console.warn('reCAPTCHA execution failed:', recaptchaError);
-          // Continue without reCAPTCHA token - let server handle it
-        }
-      } else {
-        console.warn('reCAPTCHA not available');
-      }
-      
       console.log('Submitting form data:', formData)
       
       const response = await fetch('/api/contact', {
@@ -68,10 +50,7 @@ export default function ContactForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...formData,
-          recaptchaToken
-        }),
+        body: JSON.stringify(formData),
       })
 
       console.log('Response status:', response.status)
@@ -81,13 +60,6 @@ export default function ContactForm() {
         console.log('Success response:', result)
         
         setSubmitStatus('success')
-        
-        // Track successful form submission
-        posthog.capture('contact_form_submitted', {
-          business: formData.business,
-          location: formData.location,
-          has_message: !!formData.message
-        });
         
         setFormData({
           name: '',
@@ -197,26 +169,7 @@ export default function ContactForm() {
             {isSubmitting ? 'Sending...' : 'Send Message'}
           </Button>
           
-          <div className="flex items-center justify-center space-x-2 mt-2">
-            {executeRecaptcha && (
-              <div className="flex items-center space-x-1 text-xs text-green-600">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span>Protected by reCAPTCHA</span>
-              </div>
-            )}
-          </div>
-          
-          <p className="text-xs text-gray-500 text-center mt-2">
-            This site is protected by reCAPTCHA and the Google{' '}
-            <a href="https://policies.google.com/privacy" className="text-blue-600 hover:underline">
-              Privacy Policy
-            </a>{' '}
-            and{' '}
-            <a href="https://policies.google.com/terms" className="text-blue-600 hover:underline">
-              Terms of Service
-            </a>{' '}
-            apply.
-          </p>
+
         </form>
         
         {submitStatus === 'success' && (

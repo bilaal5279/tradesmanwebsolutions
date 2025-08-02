@@ -12,42 +12,7 @@ const resend = new Resend(apiKey || "re_5RceYoQz_KmrD7zySxNN9qor1YPfFarW6");
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { name, phone, email, business, location, message, recaptchaToken } =
-      body;
-
-    // Verify reCAPTCHA token if provided and configured
-    if (recaptchaToken && process.env.RECAPTCHA_SECRET_KEY) {
-      try {
-        const recaptchaResponse = await fetch(
-          `https://www.google.com/recaptcha/api/siteverify`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
-            },
-            body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
-          }
-        );
-
-        const recaptchaResult = await recaptchaResponse.json();
-
-        if (!recaptchaResult.success || recaptchaResult.score < 0.5) {
-          console.error("reCAPTCHA verification failed:", recaptchaResult);
-          return NextResponse.json(
-            { error: "reCAPTCHA verification failed" },
-            { status: 400 }
-          );
-        }
-      } catch (recaptchaError) {
-        console.error("reCAPTCHA verification error:", recaptchaError);
-        return NextResponse.json(
-          { error: "reCAPTCHA verification failed" },
-          { status: 400 }
-        );
-      }
-    } else if (!process.env.RECAPTCHA_SECRET_KEY) {
-      console.warn("reCAPTCHA not configured - proceeding without verification");
-    }
+    const { name, phone, email, business, location, message } = body;
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({

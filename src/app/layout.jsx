@@ -2,8 +2,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
-import ReCaptchaProvider from "@/components/ReCaptchaProvider";
-import PostHogProvider from "@/components/PostHogProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -74,9 +72,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${inter.className} font-sans`}>
-        <ReCaptchaProvider>
-          <PostHogProvider>{children}</PostHogProvider>
-        </ReCaptchaProvider>
+        {children}
         <PerformanceMonitor />
       </body>
       <GoogleAnalytics gaId="G-34P9NP5MJW" />
