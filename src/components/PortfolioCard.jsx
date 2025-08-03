@@ -66,7 +66,7 @@ export default function PortfolioCard({ project, index }) {
               <Button asChild className="flex-1">
                 <Link href={project.url} target="_blank" rel="noopener noreferrer">
                   <Eye className="w-4 h-4 mr-2" />
-                  View Live Demo
+                  View Live Website
                 </Link>
               </Button>
               <Button variant="outline" asChild className="flex-1">
