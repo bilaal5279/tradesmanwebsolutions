@@ -21,7 +21,7 @@ export default function PortfolioPage() {
       image: "/Images/GreenAIR.png",
       tags: ["Air Conditioning", "Birmingham", "Emergency Services"],
       features: ["Online Booking", "Service Areas", "Emergency Callouts", "Customer Reviews"],
-      url: "https://greenairconditioning.netlify.app/",
+      url: "https://greenairac.co.uk/",
     }
   ]
 
