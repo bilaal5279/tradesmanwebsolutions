@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://tradesmanwebsolutions.co.uk';
+  const baseUrl = 'https://tradesmanweb.co.uk';
   
   const blogPosts = [
     '2025-uk-tradesperson-report',

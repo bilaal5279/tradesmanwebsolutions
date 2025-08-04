@@ -5,6 +5,6 @@ export default function robots() {
       allow: '/',
       disallow: ['/api/', '/_next/', '/admin/'],
     },
-    sitemap: 'https://tradesmanwebsolutions.co.uk/sitemap.xml',
+    sitemap: 'https://tradesmanweb.co.uk/sitemap.xml',
   };
 }
