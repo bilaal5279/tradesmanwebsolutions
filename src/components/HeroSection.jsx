@@ -13,27 +13,30 @@ export default function HeroSection() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Stop Wasting Time on Bad Leads. Get a Website That{" "}
-                <span className="text-blue-600">Wins You the Right Work.</span>
+                Transform Your Business with a{" "}
+                <span className="text-blue-600">Professional Website</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                We build professional, affordable websites for UK tradespeople that filter out time-wasters and
-                attract high-profit jobs. All for a simple monthly cost with no setup fee.
+                Your gateway to online success starts here. Get more quality leads with a website that works 24/7 to grow your trade business.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-lg px-8 py-4" asChild>
-                <Link href="/pricing">See Our Packages</Link>
+              <Button 
+                size="lg" 
+                className="text-lg px-8 py-4 bg-blue-600 hover:bg-blue-700"
+                asChild
+              >
+                <Link href="/contact#contact-form">
+                  <Phone className="w-5 h-5 mr-2" />Request Callback
+                </Link>
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="text-lg px-8 py-4 bg-transparent cursor-pointer"
+                className="text-lg px-8 py-4 border-2 border-blue-600 text-blue-600 hover:bg-blue-50"
                 asChild
               >
-                <Link href="/contact#contact-form">
-                  <Phone className="w-5 h-5 mr-2" />Request a Call Back
-                </Link>
+                <Link href="/pricing">View Pricing</Link>
               </Button>
             </div>
             <div className="flex items-center space-x-6 text-sm text-gray-500">
@@ -48,17 +51,15 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative mx-4 sm:mx-6 lg:mx-0">
             <Image
-              src="/Images/Hero.jpg"
-              alt="Professional tradesperson using tablet with van"
-              width={500}
-              height={600}
-              className="rounded-lg shadow-2xl object-cover"
+              src="/Images/GreenAIR.png"
+              alt="Green Air Conditioning website - Professional tradesman website example"
+              width={700}
+              height={800}
+              className="w-full h-auto rounded-lg shadow-2xl object-cover transform hover:scale-105 transition-transform duration-300"
               priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
-              placeholder="blur"
-              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+              sizes="(max-width: 640px) 90vw, (max-width: 768px) 85vw, (max-width: 1024px) 45vw, 700px"
             />
           </div>
         </div>

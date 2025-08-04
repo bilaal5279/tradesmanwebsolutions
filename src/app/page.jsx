@@ -1,8 +1,11 @@
 import Navbar from "@/components/Navbar"
 import HeroSection from "@/components/HeroSection"
-import ProblemSolutionSection from "@/components/ProblemSolutionSection"
-import HowItWorksSection from "@/components/HowItWorksSection"
+import TradesSection from "@/components/TradesSection"
+import FeaturesSection from "@/components/FeaturesSection"
+import BenefitsSection from "@/components/BenefitsSection"
 import SocialProofSection from "@/components/SocialProofSection"
+import HowItWorksSection from "@/components/HowItWorksSection"
+import PricingPreviewSection from "@/components/PricingPreviewSection"
 import CTASection from "@/components/CTASection"
 import Footer from "@/components/Footer"
 import StructuredData from "@/components/StructuredData"
@@ -69,9 +72,12 @@ export default function Homepage() {
       <StructuredData data={structuredData} />
       <Navbar currentPage="home" />
       <HeroSection />
-      <ProblemSolutionSection />
-      <HowItWorksSection />
+      <TradesSection />
+      <FeaturesSection />
+      <BenefitsSection />
       <SocialProofSection />
+      <HowItWorksSection />
+      <PricingPreviewSection />
       <CTASection />
       <Footer />
       <WhatsAppButton />
