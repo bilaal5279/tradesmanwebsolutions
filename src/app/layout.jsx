@@ -24,7 +24,7 @@ export const metadata = {
     title: "Professional Websites for UK Tradespeople",
     description:
       "Get more quality leads with a custom website that works 24/7. Serving UK tradespeople nationwide.",
-    url: "https://tradesmanwebsolutions.co.uk",
+    url: "https://tradesmanweb.co.uk",
     siteName: "Tradesman Web Solutions",
     locale: "en_GB",
     type: "website",
@@ -36,7 +36,7 @@ export const metadata = {
       "Get more quality leads with a custom website that works 24/7.",
   },
   alternates: {
-    canonical: "https://tradesmanwebsolutions.co.uk",
+    canonical: "https://tradesmanweb.co.uk",
   },
 };
 
