@@ -52,7 +52,7 @@ export default function PricingPreviewSection() {
                   </p>
                   <div className="space-y-1 sm:space-y-2">
                     <div className="text-4xl sm:text-5xl font-bold text-gray-900">
-                      £99
+                      £97
                     </div>
                     <div className="text-gray-600 text-sm sm:text-base">
                       /month
