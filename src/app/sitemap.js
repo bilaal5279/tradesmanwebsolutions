@@ -14,6 +14,14 @@ export default function sitemap() {
     "social-media-tradespeople-west-midlands",
   ];
 
+  const tradePages = [
+    "roofers",
+    "hvac", 
+    "electricians",
+    "carpenters",
+    "builders"
+  ];
+
   const staticPages = [
     {
       url: baseUrl,
@@ -41,6 +49,13 @@ export default function sitemap() {
     },
   ];
 
+  const tradeSpecificPages = tradePages.map((trade) => ({
+    url: `${baseUrl}/${trade}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.9,
+  }));
+
   const blogPages = blogPosts.map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
@@ -48,5 +63,5 @@ export default function sitemap() {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...blogPages];
+  return [...staticPages, ...tradeSpecificPages, ...blogPages];
 }
