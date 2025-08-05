@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
+import { ScrollProgress } from "@/components/ScrollReveal";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -72,6 +73,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${inter.className} font-sans`}>
+        <ScrollProgress />
         {children}
         <PerformanceMonitor />
       </body>

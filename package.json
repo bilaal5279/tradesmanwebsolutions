@@ -14,6 +14,7 @@
     "@next/third-parties": "^15.4.4",
     "@tailwindcss/postcss": "^4.1.11",
     "critters": "^0.0.23",
+    "framer-motion": "^12.23.12",
     "lucide-react": "^0.468.0",
     "next": "15.4.3",
     "postcss": "^8.5.6",
